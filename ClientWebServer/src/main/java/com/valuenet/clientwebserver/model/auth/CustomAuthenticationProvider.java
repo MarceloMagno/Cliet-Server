@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.valuenet.clientwebserver.repository.TokenRepository;
+import com.valuenet.clientwebserver.service.TokenRepository;
 
 /*******************************************************************************
 *                          Copyright (C) 2015 ValueNET

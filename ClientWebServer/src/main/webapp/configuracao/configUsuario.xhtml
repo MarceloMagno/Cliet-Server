@@ -9,27 +9,39 @@
 
 	<ui:define name="corpo">
 		<h:form id="form" >
-			<p:panel id="panelNovoUser"  header="Configuração de Usuário"
-				style="width:70%; margin-left:15%; margin-top:10px; margin-bottom:10px; margin-right:25%; background-color: #3B3B3B;">
+			<p:panel id="panelNovoUser"  header="Configuração de Usuário" styleClass="painelCorpo">
 	        <p:messages id="messages" showDetail="true" autoUpdate="true" />
-			    <h:panelGrid columns="2" cellpadding="5" styleClass="filds" >
+			    <h:panelGrid columns="1" cellpadding="5" styleClass="filds" >
+			       
+			        <h:panelGroup>
+					        <p:outputLabel for="login" value="Usuário : " style="margin-right: 58px;"/>
+					        <p:inputMask id="login" placeholder="Usuário" 
+					                     value="#{usuarioBean.username}" required="true" style="width:40%;"/>
+			        </h:panelGroup>
 			        
-			        <p:outputLabel for="login" value="Usuário : "/>
-			        <p:inputMask id="login" placeholder="Usuário" 
-			                     value="#{usuarioBean.username}" required="true" />
-			 
-			        <p:outputLabel for="password" value="Senha :" />
-			        <p:password id="password" match="passwordConfirm" value="#{usuarioBean.password}"
-			                   label="Senha" placeholder="***********" required="true" />
+			        <h:panelGroup>
+					        <p:outputLabel for="password" value="Senha :" style="margin-right: 70px;"/>
+					        <p:password id="password" match="passwordConfirm" value="#{usuarioBean.password}"
+					                   label="Senha" placeholder="***********" required="true" style="width:40%;"/>
+			        </h:panelGroup>
 			        
-			        <p:outputLabel for="passwordConfirm" value="Confirmar Senha :" />
-			        <p:password id="passwordConfirm" value="#{usuarioBean.password}"
-			                   label="Confirmar Senha :" placeholder="***********" required="true"/>
-			 
-			        <p:commandButton value="Limpar" type="reset" action="#{usuarioBean.limpar}" />
-
-			        <p:commandButton value="Salvar" action="#{usuarioBean.salvar}" update="@form"/>
+			        <h:panelGroup>
+					        <p:outputLabel for="passwordConfirm" value="Confirmar Senha :" style="margin-right: 9px;" />
+					        <p:password id="passwordConfirm" value="#{usuarioBean.password}"
+					                   label="Confirmar Senha :" placeholder="***********" required="true" style="width:40%;"/>
+			        </h:panelGroup>
+			        
+			        <p:separator style="margin-top: 20px;" />
+			        
+			        <h:panelGroup>
+					        <p:commandButton value="Limpar" icon="ui-icon-arrowreturnthick-1-s"
+                     type="reset" style="margin-right: 10px; margin-bottom: 10px;"  />
+					        <p:commandButton value="Salvar" action="#{usuarioBean.salvar}" update="@form" 
+					           icon="ui-icon-disk" style="margin-right: 10px; margin-bottom: 10px;"/>
+			        </h:panelGroup>
+			        
 			    </h:panelGrid>
+			    
 			    <p:panel id="panelTable"  header="Usuários"
 			      style="width:100%; margin-left:0%; margin-top:20px; margin-bottom:20px; margin-right:25%; background-color: #FFFFFF;">
 			        <p:dataTable id="usuariosTable" value="#{usuarioBean.listUsuario}" var="user" 
@@ -43,10 +55,6 @@
 				          <p:column headerText="Nome do Usuário">
 				            <h:outputText value="#{user.username}"/>
 				          </p:column>
-				         <!--  <p:column headerText="Senha">
-				            <h:outputText value="#{user.password}"/>
-				          </p:column> -->
-				          
 				          <p:column style="width: 100px; text-align: center">
 				            <p:commandButton icon="ui-icon-trash" title="Excluir" process="@this" >
 				              

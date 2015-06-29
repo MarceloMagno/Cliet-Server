@@ -7,7 +7,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import com.valuenet.clientwebserver.model.Servlet;
-import com.valuenet.clientwebserver.repository.ServletRepository;
+import com.valuenet.clientwebserver.service.ServletRepository;
 import com.valuenet.clientwebserver.util.FacesUtil;
 
 @Named

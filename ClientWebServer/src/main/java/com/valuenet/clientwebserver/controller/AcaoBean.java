@@ -7,8 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.hibernate.validator.internal.util.privilegedactions.GetMethod;
-
 import com.valuenet.clientwebserver.service.Acionador;
 import com.valuenet.clientwebserver.service.QualificadorDados;
 import com.valuenet.clientwebserver.service.QualificadorEstrutura;
@@ -29,12 +27,12 @@ public class AcaoBean implements Serializable{
 	
 	@QualificadorEstrutura
 	public void estrutura(){
-		acionador.acionar("Estrutura");
+		acionador.acionar("desktop");
 		
 	}
 	
 	@QualificadorDados
 	public void dados(){
-		acionador.acionar("Dados");
+		acionador.acionar("documentos");
 	}
 }

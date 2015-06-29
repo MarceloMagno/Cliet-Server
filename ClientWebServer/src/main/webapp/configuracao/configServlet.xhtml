@@ -8,11 +8,10 @@
 	<ui:define name="titulo">Config Client Web Server</ui:define>
 
 	<ui:define name="corpo">
-	
+        <f:loadBundle basename="i18n.labels" var="label"/>
+       
 				<h:form id="frm">
-						<p:panel id="server"  header="Servlet" 
-							style="width:70%; margin-left:15%; margin-top:10px; margin-bottom:20px;
-                      margin-right:25%; background-color: #3B3B3B;">
+						<p:panel id="server" header="Servlet" styleClass="painelCorpo">
                 <p:messages id="messages" showDetail="true" autoUpdate="true" />
 						    <h:panelGrid columns="1" cellpadding="5" styleClass="filds">
 						        <h:panelGroup>
@@ -31,6 +30,11 @@
 						        <h:panelGroup style="width:70%;" >
 								        <p:outputLabel for="porta" value="Porta (Ex: 8080) :" style="margin-right: 53px;" />
 								        <p:inputMask id="porta" maxlength="4" required="true" value="#{servletBean.porta}" disabled="#{servletBean.habilitar}"  style="width:40%;" />
+                    </h:panelGroup>
+                    
+                    <h:panelGroup >
+                        <p:outputLabel for="aplição" value="Aplicação :" style="margin-right: 90px;"/>
+                        <p:inputMask id="aplição" required="true" value="#{label.aplicacao}" disabled="true"  style="width:40%;"/>
                     </h:panelGroup>
 						 
 						        <h:panelGroup >

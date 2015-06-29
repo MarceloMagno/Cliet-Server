@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.valuenet.clientwebserver.model.Usuario;
-import com.valuenet.clientwebserver.repository.TokenRepository;
 
 public class UsuarioService  implements Serializable {
 
