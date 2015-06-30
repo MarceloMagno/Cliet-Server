@@ -1,5 +1,7 @@
 package com.valuenet.clientwebserver.service;
 
+import com.valuenet.clientwebserver.util.URL_Util;
+
 /*******************************************************************************
 *                          Copyright (C) 2015 ValueNET
 * ------------------------------------------------------------------------------
@@ -15,7 +17,7 @@ public class AcionadorEstrutura implements Acionador{
 	public boolean acionar(String btParam) {
 		String url = null;
 		
-		if( (url = URL.getURL()) != null){
+		if( (url = URL_Util.getURL()) != null){
 			return ClientHTTP.sendPost(url, btParam);
 		}
 		

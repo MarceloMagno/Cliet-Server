@@ -8,8 +8,8 @@ import javax.inject.Named;
 
 import com.valuenet.clientwebserver.model.Servlet;
 import com.valuenet.clientwebserver.service.ServletService;
-import com.valuenet.clientwebserver.service.URL;
 import com.valuenet.clientwebserver.util.FacesUtil;
+import com.valuenet.clientwebserver.util.URL_Util;
 
 /*******************************************************************************
 *                          Copyright (C) 2015 ValueNET
@@ -65,7 +65,7 @@ public class ServletBean implements Serializable{
 			this.ip = servlet.getIp();
 			this.porta = servlet.getPorta();
 			this.nome = servlet.getNomeServlet();
-			this.url = URL.getURL();
+			this.url = URL_Util.getURL();
 		}else{
 			this.ip = null;
 			this.porta = null;
