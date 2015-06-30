@@ -1,6 +1,15 @@
 package com.valuenet.clientwebserver.model;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 26/06/2015
+* 
+* Name: Usuario.java
+* 
+*******************************************************************************/
 public class Usuario {
+	
 	private String username;
 	private String password;
 	

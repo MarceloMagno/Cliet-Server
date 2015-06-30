@@ -1,23 +1,25 @@
 package com.valuenet.clientwebserver.service;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-import javax.inject.Qualifier;
-
 /*******************************************************************************
 *                          Copyright (C) 2015 ValueNET
 * ------------------------------------------------------------------------------
 * Author: MMB                       date: 26/06/2015
 * 
-* Name: QualificadorEstrutura.java
+* Name: AcionadorEstrutura.java
 * 
 *******************************************************************************/
-@Qualifier
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE, ElementType.PARAMETER})
-public @interface QualificadorDados {
+@QualificadorEstrutura
+public class AcionadorEstrutura implements Acionador{
+
+	@Override
+	public boolean acionar(String btParam) {
+		String url = null;
+		
+		if( (url = URL.getURL()) != null){
+			return ClientHTTP.sendPost(url, btParam);
+		}
+		
+		return false;
+	}
 
 }

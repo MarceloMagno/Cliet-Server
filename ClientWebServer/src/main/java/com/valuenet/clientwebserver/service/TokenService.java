@@ -19,11 +19,10 @@ import com.valuenet.clientwebserver.model.auth.Criptografia;
 * ------------------------------------------------------------------------------
 * Author: MMB                       date: 22/06/2015
 * 
-* Name: TokenRepository.java
-* 
+* Name: TokenService.java
 * 
 *******************************************************************************/
-public class TokenRepository implements Serializable {
+public class TokenService implements Serializable {
 
 	private static final long serialVersionUID = -5923036547096674201L;
 	

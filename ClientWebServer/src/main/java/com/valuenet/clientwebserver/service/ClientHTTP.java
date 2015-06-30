@@ -6,6 +6,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 26/06/2015
+* 
+* Name: ClientHTTP.java
+* 
+*******************************************************************************/
 public class ClientHTTP {
 
 	private static final String USER_AGENT = "Mozilla/5.0";

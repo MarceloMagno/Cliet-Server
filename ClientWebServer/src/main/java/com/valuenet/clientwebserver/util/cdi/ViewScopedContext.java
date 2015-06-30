@@ -15,11 +15,14 @@ import javax.faces.event.PreDestroyViewMapEvent;
 import javax.faces.event.SystemEvent;
 import javax.faces.event.SystemEventListener;
 
-/**
- * Copied from Seam Faces 3.1.0.
- * 
- * @author Steve Taylor
- */
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 22/06/2015
+* 
+* Name: ViewScopedContext.java
+* 
+*******************************************************************************/
 public class ViewScopedContext implements Context, SystemEventListener {
 	
 	@SuppressWarnings("unchecked")

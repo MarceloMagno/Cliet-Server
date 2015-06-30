@@ -10,6 +10,14 @@ import javax.validation.OverridesAttribute;
 import javax.validation.Payload;
 import javax.validation.constraints.Pattern;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 22/06/2015
+* 
+* Name: @interface Usuario.java
+* 
+*******************************************************************************/
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {})

@@ -8,6 +8,14 @@ import javax.enterprise.inject.spi.BeanManager;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 22/06/2015
+* 
+* Name: CDIServiceLocator.java
+* 
+*******************************************************************************/
 public class CDIServiceLocator {
 	
 	private static BeanManager getBeanManager() {

@@ -11,14 +11,14 @@ import java.io.Serializable;
 import com.valuenet.clientwebserver.model.Servlet;
 
 /*******************************************************************************
- * Copyright (C) 2015 ValueNET
- * --------------------------------------------------
- * ---------------------------- Author: MMB date: 22/06/2015
- * 
- * Name: ServletRepository.java
- * 
- *******************************************************************************/
-public class ServletRepository implements Serializable {
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 29/06/2015
+* 
+* Name: ServletService.java
+* 
+*******************************************************************************/
+public class ServletService implements Serializable {
 
 	private static final long serialVersionUID = 6264447356318421563L;
 
@@ -57,11 +57,6 @@ public class ServletRepository implements Serializable {
 		String csvDivisor = ",";
 
 		try {
-			/*
-			 * File f = new File(ARQUIVO_CVS); if(!f.exists()){
-			 * System.out.println("Arquivo token não foi encontrado.");
-			 * gravarToken(username, password); }
-			 */
 
 			bufferedReader = new BufferedReader(new FileReader(ARQUIVO_CVS));
 

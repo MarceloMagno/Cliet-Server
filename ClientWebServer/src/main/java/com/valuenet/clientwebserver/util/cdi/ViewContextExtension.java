@@ -6,11 +6,14 @@ import javax.enterprise.inject.spi.BeforeBeanDiscovery;
 import javax.enterprise.inject.spi.Extension;
 import javax.faces.bean.ViewScoped;
 
-/**
- * Copied from Seam Faces 3.1.0.
- *
- * @author Steve Taylor
- */
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 22/06/2015
+* 
+* Name: ViewContextExtension.java
+* 
+*******************************************************************************/
 public class ViewContextExtension implements Extension {
 	
 	public void addScope(@Observes final BeforeBeanDiscovery event)

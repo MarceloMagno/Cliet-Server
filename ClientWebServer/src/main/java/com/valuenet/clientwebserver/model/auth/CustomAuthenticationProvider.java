@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.valuenet.clientwebserver.service.TokenRepository;
+import com.valuenet.clientwebserver.service.TokenService;
 
 /*******************************************************************************
 *                          Copyright (C) 2015 ValueNET
@@ -32,7 +32,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		if (password == null)
 			throw new UsernameNotFoundException("Senha em branco!");
 
-		if(!TokenRepository.isUser(username, password))
+		if(!TokenService.isUser(username, password))
 			throw new UsernameNotFoundException("Usuário não encontrado!");
 		
 		Authentication customAuthentication = new CustomUserAuthentication(

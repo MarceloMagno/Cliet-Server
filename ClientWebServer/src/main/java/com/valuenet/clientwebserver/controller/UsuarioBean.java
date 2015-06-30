@@ -12,6 +12,14 @@ import com.valuenet.clientwebserver.model.Usuario;
 import com.valuenet.clientwebserver.service.UsuarioService;
 import com.valuenet.clientwebserver.util.FacesUtil;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 26/06/2015
+* 
+* Name: UsuarioBean.java
+* 
+*******************************************************************************/
 @Named
 @RequestScoped
 public class UsuarioBean implements Serializable{

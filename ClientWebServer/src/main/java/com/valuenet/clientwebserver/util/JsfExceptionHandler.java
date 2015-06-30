@@ -17,6 +17,14 @@ import org.apache.commons.logging.LogFactory;
 
 import com.valuenet.clientwebserver.service.ServerException;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 22/06/2015
+* 
+* Name: JsfExceptionHandler.java
+* 
+*******************************************************************************/
 public class JsfExceptionHandler extends ExceptionHandlerWrapper {
 
 	private static Log log = LogFactory.getLog(JsfExceptionHandler.class);

@@ -7,9 +7,18 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import com.valuenet.clientwebserver.model.Servlet;
-import com.valuenet.clientwebserver.service.ServletRepository;
+import com.valuenet.clientwebserver.service.ServletService;
+import com.valuenet.clientwebserver.service.URL;
 import com.valuenet.clientwebserver.util.FacesUtil;
 
+/*******************************************************************************
+*                          Copyright (C) 2015 ValueNET
+* ------------------------------------------------------------------------------
+* Author: MMB                       date: 26/06/2015
+* 
+* Name: ServletBean.java
+* 
+*******************************************************************************/
 @Named
 @RequestScoped
 public class ServletBean implements Serializable{
@@ -36,7 +45,7 @@ public class ServletBean implements Serializable{
 	}
 	
 	public void salvar() {
-		if(ServletRepository.salvar(new Servlet(ip, porta, nome))){
+		if(ServletService.salvar(new Servlet(ip, porta, nome))){
 			selectCheckbox = false;
 			habilitarCamposDaForm();
 			FacesUtil.addInfoMessage("Salvo com sucesso.");
@@ -52,11 +61,11 @@ public class ServletBean implements Serializable{
 	}
 	
 	public void servlet(){
-		if((servlet =  ServletRepository.getServlet()) != null){
+		if((servlet =  ServletService.getServlet()) != null){
 			this.ip = servlet.getIp();
 			this.porta = servlet.getPorta();
 			this.nome = servlet.getNomeServlet();
-			this.url="URL: http://"+ip+":"+porta+"/clientwebserver/"+nome;
+			this.url = URL.getURL();
 		}else{
 			this.ip = null;
 			this.porta = null;
