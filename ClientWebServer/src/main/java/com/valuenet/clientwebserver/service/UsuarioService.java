@@ -18,17 +18,17 @@ public class UsuarioService  implements Serializable {
 	private static final long serialVersionUID = 461044198587647611L;
 	
 	/**
-	 * Salva novo usuario
+	 * Salva novo usuario.
 	 * 
 	 * @param username
 	 * @param password
-	 * @return Se true usuario salvo, se false usuario ja existe
+	 * @return boolean
 	 */
 	public boolean salvar(String username, String password){
 		if(TokenService.isUser(username, password))
 			return false;
 		
-		if(TokenService.gravarToken(username, password))
+		if(TokenService.gravarToken(username, password, true))
 			return true;
 		
 		return false;
@@ -41,6 +41,19 @@ public class UsuarioService  implements Serializable {
 	 */
 	public List<Usuario> usuarios(){
 		return TokenService.usuarios();
+	}
+	
+	public boolean isUser(String username, String password){
+		return TokenService.isUser(username, password);
+	}
+	
+	/**
+	 * Exclui o usuario passado por parametro e retorna todos usuarios restante
+	 * @param username
+	 * @return List<Usuario>
+	 */
+	public List<Usuario> remover(String username){
+		return TokenService.remover(username);
 	}
 
 }

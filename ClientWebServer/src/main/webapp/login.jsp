@@ -117,14 +117,14 @@
     <body class="login">
     
     <div class="topo">
-        <h1><img src="resources/images/logo-valuenet-negative.png" alt="ValueNET"></h1>
+        <h1>Client Web Server</h1>
     </div>
   
   <table align="center" style="margin-top: 20px;" class="corLogin" >
     <tr>
         <td>
           <div style="text-align: center;  margin-bottom: 30px;">
-              <div style="text-align: center;"><h1>Client Web Server</h1></div>
+              <div style="text-align: center;"><img src="resources/images/logo-coca.png" alt="Coca-Cola"></div>
           </div>
         </td>
       </tr>

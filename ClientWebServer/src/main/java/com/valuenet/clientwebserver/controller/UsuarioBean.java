@@ -49,8 +49,15 @@ public class UsuarioBean implements Serializable{
 	}
 	
 	public void usuarios(){
-		usuarioService = new UsuarioService();
 		this.listUsuario =  usuarioService.usuarios();
+	}
+	
+	public void remover(){
+		if(!usuarioService.isUser(username, password)){
+			FacesUtil.addErrorMessage("Usuário não encontrado na base.");
+		}else{
+			usuarioService.remover(username);
+		}
 	}
 	
 	public void limpar(){
