@@ -22,12 +22,13 @@ public class ServletBean implements Serializable{
 	private Servlet servlet;
 	private boolean selectCheckbox;
 	private boolean habilitar;
+	private String url;
 	
 	@PostConstruct
 	public void init(){
 		//TODO Se a view ja foi inicializada nao vai entrar
 		if (FacesUtil.isNotPostBack()) {
-			servletHost();
+			servlet();
 			selectCheckbox = false;
 			habilitarCamposDaForm();
 		}
@@ -45,16 +46,17 @@ public class ServletBean implements Serializable{
 	}
 	
 	public void cancelarEdicao(){
-		servletHost();
+		servlet();
 		selectCheckbox = false;
 		habilitarCamposDaForm();
 	}
 	
-	public void servletHost(){
+	public void servlet(){
 		if((servlet =  ServletRepository.getServlet()) != null){
 			this.ip = servlet.getIp();
 			this.porta = servlet.getPorta();
 			this.nome = servlet.getNomeServlet();
+			this.url="URL: http://"+ip+":"+porta+"/clientwebserver/"+nome;
 		}else{
 			this.ip = null;
 			this.porta = null;
@@ -65,8 +67,7 @@ public class ServletBean implements Serializable{
 	
 	public void habilitarCamposDaForm(){
 		habilitar = selectCheckbox ? false : true;
-		if(!habilitar)
-			servletHost();
+		servlet();
 	}
 	
 	public Servlet getServlet() {
@@ -115,6 +116,14 @@ public class ServletBean implements Serializable{
 
 	public void setSelectCheckbox(boolean selectCheckbox) {
 		this.selectCheckbox = selectCheckbox;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }

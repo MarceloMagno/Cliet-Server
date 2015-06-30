@@ -8,25 +8,26 @@
 	<ui:define name="titulo">Client Web Server</ui:define>
 
 	<ui:define name="corpo">
+	  <f:loadBundle basename="i18n.labels-pt_BR" var="label"/>
+    <f:loadBundle basename="i18n.botoes-pt_BR" var="botoes"/>
 		
 		<p:panel id="painelAcao" styleClass="painelCorpo">
 				<h:form id="formEstrutura" method="post" action="xmlServletPath">
-					<p:panel id="estrutura" header="Estrutura" 
+					<p:panel id="estrutura" header="#{label.tituloAcaoPainelSecao1}" 
 						style="margin-bottom:20px; background-color: #FFFFFF;">
 				        <h:panelGrid id="pGrid" columns="3" layout="grid" style="text-align:center; width:100%">
-						        	<p:commandButton action="#{acaoBean.estrutura}"
-						        	   style="margin:5px; width:50%; height: 30px " value="Bat Estrutura 1" id="withIc1" icon="ui-icon-disk" />  
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc2" icon="ui-icon-disk" /> 
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc3" icon="ui-icon-disk" />
+						        	<p:commandButton  id="bt1" action="#{acaoBean.estrutura}" value="#{botoes.btEstruturaBat1}"
+						        	  styleClass="btAcao"  icon="ui-icon-disk" />  
+                      <p:commandButton id="bt2" styleClass="btAcao" value="Bat 1" icon="ui-icon-disk" /> 
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withIc3" icon="ui-icon-disk" />
                    
-                      <p:commandButton action="#{acaoBean.dados}" 
-                      style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc4" icon="ui-icon-disk" />  
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc5" icon="ui-icon-disk" /> 
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc6" icon="ui-icon-disk" /> 
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withIc4" icon="ui-icon-disk" />  
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withIc5" icon="ui-icon-disk" /> 
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withIc6" icon="ui-icon-disk" /> 
                    
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withco7" icon="ui-icon-disk" />  
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc8" icon="ui-icon-disk" /> 
-                      <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIc9" icon="ui-icon-disk" /> 
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withco7" icon="ui-icon-disk" />  
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withIc8" icon="ui-icon-disk" /> 
+                      <p:commandButton styleClass="btAcao" value="Bat 1" id="withIc9" icon="ui-icon-disk" /> 
 				        </h:panelGrid>
 				    </p:panel>
 			    </h:form>
@@ -34,21 +35,21 @@
 		    	<p:separator style="margin-bottom:20px; width:90%" />
 		    	
 		    	<h:form id="formDados">
-						<p:panel id="dados" header="Dados" 
+						<p:panel id="dados" header="#{label.tituloAcaoPainelSecao2}" 
 						style="margin-bottom:20px; background-color: #FFFFFF;">
 					        <h:panelGrid id="server2-grid" columns="3" layout="grid" style="text-align:center; width:100%">
 							        <p:commandButton action="#{acaoBean.dados}" 
-							           style="margin:5px; width:60%; height: 30px " value="Bat Dado 1" id="withIco1" icon="ui-icon-disk" />  
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIco2" icon="ui-icon-disk" /> 
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIco3" icon="ui-icon-disk" />
+							           styleClass="btAcao" value="#{botoes.btDadosBat1}" id="withIco1" icon="ui-icon-disk" />  
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIco2" icon="ui-icon-disk" /> 
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIco3" icon="ui-icon-disk" />
 									 
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIco4" icon="ui-icon-disk" />  
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIcn5" icon="ui-icon-disk" /> 
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIcn6" icon="ui-icon-disk" /> 
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIco4" icon="ui-icon-disk" />  
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIcn5" icon="ui-icon-disk" /> 
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIcn6" icon="ui-icon-disk" /> 
 									 
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withcon7" icon="ui-icon-disk" />  
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIcn8" icon="ui-icon-disk" /> 
-									    <p:commandButton style="margin:5px; width:60%; height: 30px " value="Bat 1" id="withIcn9" icon="ui-icon-disk" /> 
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withcon7" icon="ui-icon-disk" />  
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIcn8" icon="ui-icon-disk" /> 
+									    <p:commandButton styleClass="btAcao" value="Bat 1" id="withIcn9" icon="ui-icon-disk" /> 
 					        </h:panelGrid>
 					    </p:panel>
 			    </h:form>

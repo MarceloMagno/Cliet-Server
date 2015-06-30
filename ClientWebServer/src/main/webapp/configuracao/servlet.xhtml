@@ -1,0 +1,68 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Config Client Web Server</ui:define>
+
+	<ui:define name="corpo">
+        <f:loadBundle basename="i18n.labels-pt_BR" var="label"/>
+        <f:loadBundle basename="i18n.botoes-pt_BR" var="botoes"/>
+       
+				<h:form id="frm">
+						<p:panel id="server" header="#{label.tituloServletPainel}" styleClass="painelCorpo">
+                <p:messages id="messages" showDetail="true" autoUpdate="true" />
+						    <h:panelGrid columns="1" cellpadding="5" styleClass="filds">
+						        <h:panelGroup>
+						            <p:outputLabel value="#{label.editar}" style="margin-right: 20px;"/>
+                        <p:selectBooleanCheckbox id="habilitaCheckbox" value="#{servletBean.selectCheckbox}" >
+                              <p:ajax listener="#{servletBean.habilitarCamposDaForm}"
+                               update="ip porta nomeServlet btSalvar btCancelar url" />
+                        </p:selectBooleanCheckbox>
+                    </h:panelGroup>
+                    
+						        <h:panelGroup>
+                        <p:outputLabel for="ip" value="#{label.ip}" style="margin-right: 20px;"/>
+                        <p:inputMask id="ip" required="true" value="#{servletBean.ip}" disabled="#{servletBean.habilitar}" style="width:40%;"/>
+                    </h:panelGroup>
+						 
+						        <h:panelGroup style="width:70%;" >
+								        <p:outputLabel for="porta" value="Porta (Ex: 8080) :" style="margin-right: 50px;" />
+								        <p:inputMask id="porta" maxlength="4" required="true" value="#{servletBean.porta}" disabled="#{servletBean.habilitar}"  style="width:40%;" />
+                    </h:panelGroup>
+                    
+                    <h:panelGroup >
+                        <p:outputLabel for="aplicacao" value="#{label.aplicacao}" style="margin-right: 88px;"/>
+                        <p:inputMask id="aplicacao" required="true" value="#{label.nomeAplicacao}" disabled="true"  style="width:40%;"/>
+                    </h:panelGroup>
+						 
+						        <h:panelGroup>
+								        <p:outputLabel for="nomeServlet" value="#{label.nomeServlet}" style="margin-right: 47px;"/>
+								        <p:inputMask id="nomeServlet" required="true" value="#{servletBean.nome}" disabled="#{servletBean.habilitar}"  style="width:40%;"/>
+                    </h:panelGroup>
+                    
+                    <p:separator style="margin-top: 20px;" />
+                    
+                    <h:panelGroup>
+                        <p:outputLabel id="url" value="#{servletBean.url}" style="margin-right: 88px;"/>
+                    </h:panelGroup>
+                    
+					          <p:separator/>
+					          
+					          <h:panelGroup>
+								        <p:commandButton id="btCancelar" value="#{botoes.cancelar}" icon="ui-icon-cancel" 
+								        disabled="#{servletBean.habilitar}" style="margin-right: 10px; margin-bottom: 10px;" 
+								         action="#{servletBean.cancelarEdicao}" update="habilitaCheckbox ip porta nomeServlet btSalvar btCancelar url"/>
+								        <p:commandButton id="btSalvar" value="#{botoes.salvar}" action="#{servletBean.salvar}" 
+								        disabled="#{servletBean.habilitar}" icon="ui-icon-disk" style="margin-right: 10px; margin-bottom: 10px;"
+								        update="habilitaCheckbox ip porta nomeServlet btSalvar btCancelar url" />
+						        </h:panelGroup>
+						    </h:panelGrid>
+					    </p:panel>
+					</h:form>
+					
+	</ui:define>
+
+</ui:composition>

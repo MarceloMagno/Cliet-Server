@@ -8,25 +8,29 @@
 	<ui:define name="titulo">Client Web Server</ui:define>
 
 	<ui:define name="corpo">
+	  <f:loadBundle basename="i18n.labels-pt_BR" var="label"/>
+    <f:loadBundle basename="i18n.botoes-pt_BR" var="botoes"/>
+    <f:loadBundle basename="i18n.mensages-pt_BR" var="mensages"/>
+	
 		<h:form id="form" >
-			<p:panel id="panelNovoUser"  header="Configuração de Usuário" styleClass="painelCorpo">
+			<p:panel id="panelNovoUser"  header="#{label.tituloUsuarioPainelConfig}" styleClass="painelCorpo">
 	        <p:messages id="messages" showDetail="true" autoUpdate="true" />
 			    <h:panelGrid columns="1" cellpadding="5" styleClass="filds" >
 			       
 			        <h:panelGroup>
-					        <p:outputLabel for="login" value="Usuário : " style="margin-right: 58px;"/>
-					        <p:inputMask id="login" placeholder="Usuário" 
+					        <p:outputLabel for="login" value="#{label.usuario}" style="margin-right: 64px;"/>
+					        <p:inputMask id="login" placeholder="#{label.usuario}" 
 					                     value="#{usuarioBean.username}" required="true" style="width:40%;"/>
 			        </h:panelGroup>
 			        
 			        <h:panelGroup>
-					        <p:outputLabel for="password" value="Senha :" style="margin-right: 70px;"/>
+					        <p:outputLabel for="password" value="#{label.senha}" style="margin-right: 72px;"/>
 					        <p:password id="password" match="passwordConfirm" value="#{usuarioBean.password}"
 					                   label="Senha" placeholder="***********" required="true" style="width:40%;"/>
 			        </h:panelGroup>
 			        
 			        <h:panelGroup>
-					        <p:outputLabel for="passwordConfirm" value="Confirmar Senha :" style="margin-right: 9px;" />
+					        <p:outputLabel for="passwordConfirm" value="#{label.confirmarSenha}" style="margin-right: 10px;" />
 					        <p:password id="passwordConfirm" value="#{usuarioBean.password}"
 					                   label="Confirmar Senha :" placeholder="***********" required="true" style="width:40%;"/>
 			        </h:panelGroup>
@@ -34,9 +38,9 @@
 			        <p:separator style="margin-top: 20px;" />
 			        
 			        <h:panelGroup>
-					        <p:commandButton value="Limpar" icon="ui-icon-arrowreturnthick-1-s"
+					        <p:commandButton value="#{botoes.limpar}" icon="ui-icon-arrowreturnthick-1-s"
                      type="reset" style="margin-right: 10px; margin-bottom: 10px;"  />
-					        <p:commandButton value="Salvar" action="#{usuarioBean.salvar}" update="@form" 
+					        <p:commandButton value="#{botoes.salvar}" action="#{usuarioBean.salvar}" update="@form" 
 					           icon="ui-icon-disk" style="margin-right: 10px; margin-bottom: 10px;"/>
 			        </h:panelGroup>
 			        
