@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -21,17 +21,19 @@ import com.valuenet.clientwebserver.util.FacesUtil;
 * 
 *******************************************************************************/
 @Named
-@RequestScoped
+@SessionScoped
 public class UsuarioBean implements Serializable{
 
 	private static final long serialVersionUID = 7133400436136653035L;
 	
+	private static final boolean EXCLUIR = false;
 	private String username;
 	private String password;
 	@Inject
 	private UsuarioService usuarioService;
 	private Usuario usuarioSelecionado;
 	private List<Usuario> listUsuario;
+	Usuario u;
 	
 	@PostConstruct
 	public void init(){
@@ -57,10 +59,10 @@ public class UsuarioBean implements Serializable{
 	}
 	
 	public void remover(){
-		if(!usuarioService.isUser(usuarioSelecionado.getUsername(), usuarioSelecionado.getPassword())){
-			FacesUtil.addErrorMessage("Usuário não encontrado na base.");
+		if(usuarioService.isUser(usuarioSelecionado.getUsername(), usuarioSelecionado.getPassword(), EXCLUIR)){
+			this.listUsuario = usuarioService.remover(usuarioSelecionado.getUsername());
 		}else{
-			usuarioService.remover(username);
+			FacesUtil.addErrorMessage("Usuário não encontrado na base.");
 		}
 	}
 	

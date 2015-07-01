@@ -32,7 +32,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		if (password == null)
 			throw new UsernameNotFoundException("Senha em branco!");
 
-		if(!TokenService.isUser(username, password))
+		if(!TokenService.isUser(username, password, true))
 			throw new UsernameNotFoundException("Usuário não encontrado!");
 		
 		Authentication customAuthentication = new CustomUserAuthentication(

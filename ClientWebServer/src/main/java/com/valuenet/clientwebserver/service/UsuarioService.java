@@ -25,7 +25,7 @@ public class UsuarioService  implements Serializable {
 	 * @return boolean
 	 */
 	public boolean salvar(String username, String password){
-		if(TokenService.isUser(username, password))
+		if(TokenService.isUser(username, password, true))
 			return false;
 		
 		if(TokenService.gravarToken(username, password, true))
@@ -43,8 +43,16 @@ public class UsuarioService  implements Serializable {
 		return TokenService.usuarios();
 	}
 	
-	public boolean isUser(String username, String password){
-		return TokenService.isUser(username, password);
+	/**
+	 * Verifica existencia de usuario. 
+	 * Obs.: Para incluir novo usuario o parametro deve ser true, para excluir o parametro de ser false.
+	 * @param username
+	 * @param password
+	 * @param encriptar
+	 * @return true se existe ou false se nao existe
+	 */
+	public boolean isUser(String username, String password, boolean encriptar){
+		return TokenService.isUser(username, password, encriptar);
 	}
 	
 	/**

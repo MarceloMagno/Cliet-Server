@@ -25,17 +25,16 @@
 	
 		<header>
 			<div style="float: left; margin-left: 5%;">
-			   <h1>Bat Servlet</h1>
-				<!-- <h:graphicImage library="images" name="batservlet.png" width="250px" height="30%" style="margin-top: 3%;"/> -->
+				<h:graphicImage library="images" name="logo-coca.png" style="margin-top: 5%;"/>
 			</div>
 			
 			<div style="float: right; margin-right: 8%">
 				<h:form style="display: inline-block" >
 					<p:menubar styleClass="menu-sistema" >
 						<p:submenu label="MENU" >
-							<p:menuitem value="Ações" outcome="/acao" icon="ui-icon-extlink"/>
-							<p:menuitem value="Configurações" outcome="/configuracao/configServlet" icon="ui-icon-extlink"/>
-							<p:menuitem value="Usuário" outcome="/configuracao/configUsuario" icon="ui-icon-extlink"/>
+							<p:menuitem value="Ações" outcome="/acao" icon="ui-icon-play"/>
+							<p:menuitem value="Configurações" outcome="/configuracao/servlet" icon="ui-icon-gear"/>
+							<p:menuitem value="Usuário" outcome="/configuracao/usuario" icon="ui-icon-person"/>
 							<p:separator style="margin-bottom: 10px;"/>
 							<p:menuitem value="Usuário" icon="ui-icon-extlink">
                    <h:outputLink value="#{request.contextPath}/j_spring_security_logout"  
@@ -70,12 +69,6 @@
 				</a>
 		</p>
 		
-		<script>
-		function estadoDaForm() {
-            $('ip').removeAttr('disabled');
-          }
-    </script>
-			
 	</h:body>
 	
 </html>

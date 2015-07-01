@@ -8,17 +8,16 @@ body {
 }
 
 .login{
-  background-color: #606468;  
+  background-color: #8B0000;  
 }
 
 header {
 	padding: 5px 0px;
 	margin-bottom: 0px;
-	height: 90px;
-	background-color: #D72108;
-	/* background-color: #3B3B3B; */
+	height: 50px;
+	background-color: #8B0000;
+	/* background-color: #3B3B3B; #D72108 #8B0000 */
 	color: #fff;
-	
 	box-shadow: 0px 2px 2px #ccc;
 }
 
@@ -116,7 +115,7 @@ h1 {
     border: 10px !important;
     padding: 0px !important;
     background: none !important;
-    margin-top: 42%;
+    margin-top: 20%;
 }
 
 .menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
@@ -143,7 +142,7 @@ h1 {
 	  color: #ffffff;
 	  text-align: center;
 	  text-shadow: 0 1px rgba(255,255,255);
-	  background: #D72108;
+	  background: #8B0000;
 	 
 }
 
@@ -165,4 +164,28 @@ a.button:active {
 .filds{
 	color: #ffffff;
 	width: 100%;
+}
+
+.painelCorpo{
+	width:70%; 
+	margin-left:15%; 
+	margin-top:10px; 
+	margin-bottom:20px; 
+	margin-right:25%; 
+	background-color: #8B0000;
+}
+
+.painelDeTabela{
+	width:100%;
+	margin-left:0%; 
+	margin-top:20px; 
+	margin-bottom:20px; 
+	margin-right:25%; 
+	background-color: #FFFFFF;
+}
+
+.btAcao{
+  	margin:5px; 
+  	width:160px; 
+  	height: 90px ";
 }

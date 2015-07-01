@@ -33,12 +33,14 @@ public class TokenService implements Serializable {
 	}
 
 	/**
-	 * Metodo statico que verifica existencia de usuario
+	 * Verifica existencia de usuario. 
+	 * Obs.: Para incluir novo usuario o parametro deve ser true, para excluir o parametro de ser false.
 	 * @param username
 	 * @param password
+	 * @param encriptar
 	 * @return true se existe ou false se nao existe
 	 */
-	public static boolean isUser(String username, String password) {
+	public static boolean isUser(String username, String password, boolean encriptar) {
 
 		BufferedReader bufferedReader = null;
 		String linha = "";
@@ -53,7 +55,13 @@ public class TokenService implements Serializable {
 
 			bufferedReader = new BufferedReader(new FileReader(ARQUIVO_CVS));
 
-			String passwordEncript = encriptar(password);
+			String passwordEncript;
+			
+			if(encriptar){
+				passwordEncript = encriptar(password);
+			}else{
+				passwordEncript = password;
+			}
 
 			while ((linha = bufferedReader.readLine()) != null) {
 				String[] token = linha.split(csvDivisor);

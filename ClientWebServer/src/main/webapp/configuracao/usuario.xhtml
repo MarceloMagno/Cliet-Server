@@ -13,7 +13,7 @@
     <f:loadBundle basename="i18n.mensages-pt_BR" var="mensages"/>
 	
 		<h:form id="form" >
-			<!-- <p:panel id="panelNovoUser"  header="#{label.tituloUsuarioPainelConfig}" styleClass="painelCorpo"> -->
+			<p:panel id="painelNovoUser"  header="#{label.tituloUsuarioPainelConfig}" styleClass="painelCorpo">
 	        <p:messages id="messages" showDetail="true" autoUpdate="true" />
 			    <h:panelGrid columns="1" cellpadding="5" styleClass="filds" >
 			       
@@ -46,10 +46,9 @@
 			        
 			    </h:panelGrid>
 			    
-			    <!-- <p:panel id="panelTable"  header="#{label.tituloUsuarioTabelaHeader}" styleClass="painelDeTabela"> -->
+			    <p:panel id="painelTable"  header="#{label.tituloUsuarioTabelaHeader}" styleClass="painelDeTabela">
 			        <p:dataTable id="usuariosTable" value="#{usuarioBean.listUsuario}" var="user" 
-	            		style="margin-top: 10px" emptyMessage="Nenhum usuário encontrado." 
-	            		rows="4" paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
+	            		style="margin-top: 10px" emptyMessage="Nenhum usuário encontrado." >
 	              
 		              <p:ajax event="rowSelect"  update=":form:messages" />
 		              <p:ajax event="rowUnselect"  update=":form:messages" />
@@ -57,28 +56,25 @@
 				          <p:column headerText="Nome do Usuário">
 				            <h:outputText value="#{user.username}"/>
 				          </p:column>
-				          <p:column headerText="Senha">
-				            <h:outputText value="#{user.password}"/>
-				          </p:column>
 				          
 				          <p:column style="width: 100px; text-align: center">
 				            <p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirmacaoExclusao').show();" 
-					            process="@this" update=":form:confirmacaoExclusaoDialog">
-					            <f:setPropertyActionListener target="#{usuarioBean.usuarioSelecionado}" value="#{user}" />
+					                        process="@this" update=":form:confirmacaoExclusaoDialog">
+					               <f:setPropertyActionListener target="#{usuarioBean.usuarioSelecionado}" value="#{user}" />
 				            </p:commandButton>
 				          </p:column>
 		        </p:dataTable>
 		        
-		        <p:confirmDialog header="Exclusão de Usuário" showEffect="explode" hideEffect="bounce" 
-		        	message="Tem certeza que deseja excluir o usuário #{usuarioBean.usuarioSelecionado.username}.?"
-		    		widgetVar="confirmacaoExclusao" id="confirmacaoExclusaoDialog" >
-		    		<p:button value="Não" onclick="PF('confirmacaoExclusao').hide(); return false;" />
-		    		<p:commandButton value="Sim" oncomplete="PF('confirmacaoExclusao').hide();" action="#{usuarioBean.remover}"
-		    			process="@this" update=":form:usuariosTable"/>
+		        <p:confirmDialog header="Exclusão de Usuário" showEffect="fade" hideEffect="bounce"
+		        	               message="Tem certeza que deseja excluir o usuário #{usuarioBean.usuarioSelecionado.username}?"
+		    		                 widgetVar="confirmacaoExclusao" id="confirmacaoExclusaoDialog" >
+				    		<p:button value="Não" onclick="PF('confirmacaoExclusao').hide(); return false;" />
+				    		<p:commandButton value="Sim" oncomplete="PF('confirmacaoExclusao').hide();" action="#{usuarioBean.remover}"
+		    			                   process="@this" update=":form:usuariosTable"/>
 		    	</p:confirmDialog>
 		    	
-			 <!--    </p:panel>
-		    </p:panel> -->
+			    </p:panel>
+		    </p:panel>
 		</h:form>
 	</ui:define>
 
