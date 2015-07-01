@@ -30,12 +30,16 @@ public class UsuarioBean implements Serializable{
 	private String password;
 	@Inject
 	private UsuarioService usuarioService;
+	private Usuario usuarioSelecionado;
 	private List<Usuario> listUsuario;
 	
 	@PostConstruct
 	public void init(){
-		limpar();
-		usuarios();
+		// TODO Se a view ja foi inicializada nao vai entrar
+		if (FacesUtil.isNotPostBack()) {
+			limpar();
+			usuarios();
+		}
 	}
 	
 	public void salvar() {
@@ -53,7 +57,7 @@ public class UsuarioBean implements Serializable{
 	}
 	
 	public void remover(){
-		if(!usuarioService.isUser(username, password)){
+		if(!usuarioService.isUser(usuarioSelecionado.getUsername(), usuarioSelecionado.getPassword())){
 			FacesUtil.addErrorMessage("Usuário não encontrado na base.");
 		}else{
 			usuarioService.remover(username);
@@ -87,7 +91,14 @@ public class UsuarioBean implements Serializable{
 
 	public void setListUsuario(List<Usuario> listUsuario) {
 		this.listUsuario = listUsuario;
+	}
+
+	public Usuario getUsuarioSelecionado() {
+		return usuarioSelecionado;
+	}
+
+	public void setUsuarioSelecionado(Usuario usuarioSelecionado) {
+		this.usuarioSelecionado = usuarioSelecionado;
 	}  
-	
 	
 }

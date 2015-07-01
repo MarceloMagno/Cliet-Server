@@ -175,6 +175,15 @@ a.button:active {
 	background-color: #8B0000;
 }
 
+.painelDeTabela{
+	width:100%;
+	margin-left:0%; 
+	margin-top:20px; 
+	margin-bottom:20px; 
+	margin-right:25%; 
+	background-color: #FFFFFF;
+}
+
 .btAcao{
   	margin:5px; 
   	width:160px; 
