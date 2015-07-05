@@ -11,6 +11,7 @@ package com.valuenet.clientwebserver.model;
 public class Usuario {
 	
 	private String username;
+	
 	private String password;
 	
 	public Usuario(String username, String password) {

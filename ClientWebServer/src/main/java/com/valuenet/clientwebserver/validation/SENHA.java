@@ -21,11 +21,11 @@ import javax.validation.constraints.Pattern;
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {})
-@Pattern(regexp = "([a-zA-Z]{2}\\d{4,18})?")
-public @interface Usuario {
+@Pattern(regexp = "([a-zA-Z]{2}\\d{2,18})?")
+public @interface SENHA {
 	
-	@OverridesAttribute(constraint = Pattern.class, name="messagePassword")
-	String messagePassword() default "{com.valuenet.clientwebserver.model.validate.Usuario.messagePassword}";
+	@OverridesAttribute(constraint = Pattern.class, name="message")
+	String message() default "{com.valuenet.clientwebserver.validation.constraints.SENHA.message}";
 	
 	Class<?>[] groups() default {};
 	

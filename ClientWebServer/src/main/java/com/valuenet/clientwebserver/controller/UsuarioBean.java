@@ -8,9 +8,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.valuenet.clientwebserver.model.Usuario;
 import com.valuenet.clientwebserver.service.UsuarioService;
 import com.valuenet.clientwebserver.util.FacesUtil;
+import com.valuenet.clientwebserver.validation.SENHA;
 
 /*******************************************************************************
 *                          Copyright (C) 2015 ValueNET
@@ -27,7 +30,9 @@ public class UsuarioBean implements Serializable{
 	private static final long serialVersionUID = 7133400436136653035L;
 	
 	private static final boolean EXCLUIR = false;
+	@NotBlank
 	private String username;
+	@SENHA
 	private String password;
 	@Inject
 	private UsuarioService usuarioService;
